@@ -1,0 +1,262 @@
+*{ margin: 0; padding: 0; border: 0; font-size: 72px; }
+
+@font-face {
+    font-family: 'NBInternationalPro_Reg';
+    src: url('fonts/NBInternationalPro_Reg.eot');
+    src: local('☺'),url('fonts/NBInternationalPro_Reg.woff') format('woff'),url('fonts/NBInternationalPro_Reg.ttf') format('truetype'),url('fonts/NBInternationalPro_Reg.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NBInternationalPro_Bol';
+    src: url('fonts/NBInternationalPro_Bol.eot');
+    src: local('☺'),url('fonts/NBInternationalPro_Bol.woff') format('woff'),url('fonts/NBInternationalPro_Bol.ttf') format('truetype'),url('fonts/NBInternationalPro_Bol.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'NBInternationalPro_Bol';
+    text-align: center;
+    background: black;
+}
+
+.black { background: black; color: white; }
+.white { background: white; color: black; }
+.active { opacity: 1!important; }
+.size1 { font-size: 95px; margin-top:-10px; }
+.size2 { font-size: 140px; }
+
+.flag-end span{
+  width: 528px;
+  height: 190px;
+  position: absolute;
+  left: 50%;
+  margin-left: -264px;
+  margin-top: -65px;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.black.flag-end span {
+  background-image: url('../img/flag_white.gif');
+	background-size: 528px 190px;
+}
+
+.white.flag-end span {
+  background-image: url('../img/flag_black.gif');
+	background-size: 528px 190px;
+}
+
+#container {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+#container .slide,
+#container .flag {
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+}
+
+#container .target,
+#container .flag span{
+  width: 315px;
+  height: 210px;
+  position: absolute;
+  left: 50%;
+  margin-left: -157.5px;
+  text-indent: -99999px;
+  cursor: pointer;
+  display: block;
+  z-index: 10;
+}
+
+#container .target {
+    background: none;
+}
+
+#container .target span {
+    position: relative;
+    height: 210px;
+    display: block;
+}
+
+#container .flag.black span {
+    background: white;
+    display: block;
+}
+
+#container .flag.white span {
+    background: black;
+    display: block;
+}
+
+.rodape_preto {
+  color: #fff;
+}
+
+.rodape_branco {
+  color: #000;
+}
+
+.rodape_preto,
+.rodape_branco {
+  position: static;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+  font-size: 13px;
+  font-family: 'NBInternationalPro_Reg';
+  z-index: 99;
+}
+
+.roadie_txt {
+  position: absolute;
+  left: 0px;
+  line-height: 24px;
+  right: 0px;
+  bottom: 0px;
+  margin-bottom: 30px;
+  font-size: 13px;
+  text-align: center;
+  z-index: 99;
+}
+
+.description{
+  width: 100%;
+  float: left;
+  line-height: 24px;
+  font-size: 13px;
+  text-align: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: distribute;
+  justify-content: center;
+}
+
+.content-fixed{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  line-height: 24px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.content-fixed p{
+  display: block;
+  margin: 30px 0 0 0;
+  line-height: 24px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.link_branco,
+.link_preto {
+  font-size: 13px;
+}
+
+.link_branco {
+  color: #000;
+}
+
+.link_preto {
+  color: #fff;
+}
+
+br.mobile {
+  display: none;
+}
+
+@media (max-width: 479px) {
+
+  #container .target,
+  #container .flag span{
+    width: 259px;
+    height: 173px;
+    margin-left: -129.5px;
+  }
+
+  #container .target span {
+    height: 173px;
+  }
+
+  #container .slide{
+    font-size: 48px; 
+  }
+
+  .roadie_txt {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  br {
+    display: none;
+  }
+
+  br.mobile {
+    display: block;
+  }
+
+  .rodape_branco,
+  .rodape_preto,
+  .roadie_txt,
+  .link_branco,
+  .link_preto,
+  .description,
+  .content-fixed p{
+    font-size: 10px;
+  }
+
+  .content-fixed p{
+    margin: 10px 0 0 0;
+  }
+
+  #intercom-container .intercom-launcher-frame {
+    top: 15px;
+  }
+
+  #intercom-container .intercom-launcher-badge-frame {
+    top: 10px;
+  }
+
+  .black.flag-end span {
+    background-position: center center;
+    background-size: 250px auto;
+  }
+
+  .white.flag-end span {
+    background-position: center center;
+    background-size: 250px auto;
+  }
+
+}
+
+@media (max-width: 320px) {
+  .rodape_branco,
+  .rodape_preto,
+  .roadie_txt,
+  .link_branco,
+  .link_preto,
+  .description,
+  .content-fixed p{
+    font-size: 9px;
+  }
+
+  .content-fixed p{
+    margin: 0;
+  }
+}

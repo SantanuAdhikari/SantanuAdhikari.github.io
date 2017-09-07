@@ -1,0 +1,83 @@
+
+var t_interval = 120;
+// var t_interval = 800;
+var h_flag = 105;
+
+var wresize = function(){
+    var w_width     = $(window).width();
+    var w_height    = $(window).height();
+    var p_height    = (w_height / 2);
+    var h_target    = $('.flag').height();
+    var fixed_target    = $('.content-fixed').height();
+
+    $('#container').width(w_width);
+    $('#container').height(w_height);
+    $('.slide').height(w_height - p_height + 40).css('padding-top',(p_height-40));
+    //$('.flag').height(w_height - (h_flag*2)-125).css('padding-top',(p_height - h_flag));
+    $('.flag').height(w_height-(p_height - h_flag)).css('padding-top',(p_height - h_flag));
+    $('.target').css('padding-top',(p_height - h_flag));
+
+    if ($(window).width() <= 479) {
+        $('.roadie_txt').height((w_height-(p_height - h_flag))- 203);
+    }else{
+        $('.roadie_txt').height((w_height-(p_height - h_flag))- 240);
+    }
+
+    $('.roadie_txt .description').height($('.roadie_txt').height() - fixed_target)
+}
+
+var f = 1;
+var flag = function(){
+    $('.flag').removeClass('active');
+    var fcurrent = $('.flag.'+f);
+    $(fcurrent).addClass('active');
+
+    (f === 2) ? (f = 1) : ++f;
+    //console.log(f);
+}
+fperiod = window.setInterval(flag, t_interval);
+
+$(document).ready(function(){
+
+    var t_slides    = $('.slide').length;
+
+    $('.target span').hover(function(){
+
+        var i = 1;
+        var slides = function(){
+            $('.slide').removeClass('active');
+            var current = $('.slide.'+i);
+            $(current).addClass('active');
+
+            (i === t_slides) ? (i = 1) : ++i;
+            //console.log(i);
+        }
+
+        period = window.setInterval(slides, t_interval);
+        $('.flag').css('display','none');
+        clearInterval(fperiod);
+
+        },function(){
+            clearInterval(period);
+            fperiod = window.setInterval(flag, t_interval);
+            $('.slide').removeClass('active');
+            $('.flag').css('display','block');
+        }
+    );
+
+    $('.content-fixed a').click(function(event) {
+        event.preventDefault();
+        // alert('oi')
+        var href = $(this).attr('href');
+
+        window.open(href);
+    });
+
+    wresize();
+
+    $(window).resize(function() {
+        wresize();
+    });
+
+});
+
