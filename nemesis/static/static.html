@@ -8,20 +8,21 @@
 	</head>
 <body background="./static.gif">
 <audio autoplay loop>    
-   <source src="./static.mp3">  
+   <source src="./static.MP3">  
 </audio> 
 <div><h1><p id="noise"></p></h1></div>
 
 <script>
-var text = ["DO","YOU","KNOW","IF","YOU","CLOSE","YOUR","EYES","AND","LISTEN","TO","THE","STATIC","SILENTLY","SOMETIMES","YOU","CAN","HEAR","SOMEONE","CALLING","YOUR","NAME"];
+var text = ["test","YOU","KNOW","IF","YOU","CLOSE","YOUR","EYES","AND","LISTEN","TO","THE","STATIC","SILENTLY","SOMETIMES","YOU","CAN","HEAR","SOMEONE","CALLING","YOUR","NAME"];
 var i =0;
 function change(){
 document.getElementById("noise").innerHTML= text[i];
 setTimeout(function(){
 i++;
-if(i<text.length){
-change();
-}else{i=0;}
+if(i==text.length){
+i=0;}
+	setTimeout(function(){document.getElementById("noise").innerHTML= <br>;},500);
+	change();
 },500);
 };
 change();
