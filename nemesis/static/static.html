@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Static.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./static.css">
+		<link rel="shortcut icon" href="./smile.png" type="image/x-icon" />
+	</head>
+<body background="./static.gif">
+<audio autoplay loop>    
+   <source src="./static.mp3">
+	<source src="./static.mp3">   
+</audio> 
+
+<div id="top"></div>
+<p id="noise"></p>
+<div id="bottom"><a href="https://santanuadhikari.github.io/nemesis/seeyou.html">ESCAPE</a></div>
+
+<script>
+var text = [" ","You","know"," ","when","I"," ","close","my","eyes","and"," ","listen","to","the","static"," ","sometimes"," ","I","can","hear"," ","someone","calling","my","name."," "," "," "," ","Have","you","ever"," ","thought","about"," ","killing","yourself?"," "," "," "," ","Ha","Ha Ha"," ","me","neither."," "," "," "," "];
+var i =0;
+function change(){
+document.getElementById("noise").innerHTML= text[i];
+setTimeout(function(){
+i++;
+if(i==text.length){
+i=0;
+}
+change();
+},500);
+};
+change();
+</script>
+</body>
+</html>

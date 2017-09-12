@@ -1,0 +1,27 @@
+html, body {
+	margin:0;
+	padding:0;
+	height: 100%;}
+
+#top { 
+    height: 45%;
+	width: 100%;
+}
+#noise {
+    font-family: "Courier New", Courier, monospace;
+	font-size: 500%;
+	text-align: center;
+    color: gray;
+	margin-top: 0px;
+	padding-top: 0px;
+	font-weight: bold;
+}
+#bottom { 
+   position:absolute;
+   left:0px;
+   bottom:0px;
+   height:20px;
+   width:100%;
+   text-align: center;
+	background-color:gray;
+}
