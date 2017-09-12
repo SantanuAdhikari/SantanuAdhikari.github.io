@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Static.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./static.css">
+		<!link rel="shortcut icon" href="./nemesis/me.jpg" type="image/x-icon" />
+	</head>
+<body background="./static.gif">
+<audio autoplay loop>    
+   <source src="static.mp3">  
+</audio> 
+<div><h1><p id="noise"></p></h1></div>
+
+<script>
+var text = ["DO","YOU","KNOW","IF","YOU","CLOSE","YOUR","EYES","AND","LISTEN","TO","THE","STATIC","SILENTLY","SOMETIMES","YOU","CAN","HEAR","SOMEONE","CALLING","YOUR","NAME"];
+var i =0;
+function change(){
+document.getElementById("noise").innerHTML= text[i];
+setTimeout(function(){
+i++;
+if(i<text.length){
+change();
+}
+},500);
+};
+change();
+</script>
+</body>
+</html>
